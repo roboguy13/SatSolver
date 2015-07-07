@@ -49,7 +49,7 @@ sat vars expr =  -- Uses the fmap from the Maybe functor to propagate the any fa
       getBindings :: (Bool, [VarBinding]) -> [VarBinding]
       getBindings (_,y) = y
 
-      implies p q = p == q
+      implies p q = not p || q
 
       satWithBindings :: SatExpr -> [VarBinding] -> Bool
       satWithBindings T               bindings = True
